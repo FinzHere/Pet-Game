@@ -11,8 +11,6 @@ age = 1
 nextAgeCounter = 0
 neededEXP = 3
 
-print("wsg")
-
 plrstatsfile = {
       "Player":{
               "nickname":""
