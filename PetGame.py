@@ -11,7 +11,7 @@ age = 1
 nextAgeCounter = 0
 neededEXP = 3
 
-print("JIMMYS HERE!")
+print("wsg")
 
 plrstatsfile = {
       "Player":{
