@@ -1,0 +1,15 @@
+{
+    "Player": {
+        "nickname": "SPUDLY"
+    },
+    "Stats": {
+        "TotalPets": 0,
+        "TotalLevels": 0,
+        "TotalXP": 0,
+        "TotalFeeds": 0,
+        "TotalPlays": 0,
+        "TotalGambles": 0,
+        "TotalErrors": 0,
+        "TotalUnborns": 0
+    }
+}
