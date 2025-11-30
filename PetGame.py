@@ -3,6 +3,7 @@ import random
 import sys
 import json
 import os
+import time
 
 thingsToEat = ["Bread", "Ice Cream", "Cookies", "Pet Food", "An Apple", "A Nuclear Warhead", "A Pretzel", "Grapes", "An Undiscovered Animal", "An Unkown Bacterium"]
 thingsToPlay = ["Fetch", "Hide and Seek", "Tug-of-war with a rope", "Tug-of-war with posidens trident", "Chess", "Checkers", "Snakes and Ladders", "Rummikub", "Blackjack", "Roulette", "Baccarat", "Rummy", "Go Fish", "Poker", "with a Meteorite that fell from Space", "with a Little Alien"]
@@ -26,6 +27,36 @@ plrstatsfile = {
         "TotalUnborns": 0
     }
 }
+
+def loading_bar(total_steps, delay=0.1):
+    for i in range(total_steps + 1):
+        
+        percent = int((i / total_steps) * 100)
+        
+        
+        bar_length = 20
+        filled_length = int(bar_length * i / total_steps)
+        bar = '█' * filled_length + '-' * (bar_length - filled_length)
+        
+        # Print the bar
+        sys.stdout.write(f'\r|{bar}| {percent}%\n')
+        sys.stdout.flush()
+        
+        time.sleep(delay)
+
+saves = Path(__file__).parent / "Saves"
+datasaves = Path(__file__).parent / "DataSaves"
+
+if saves.exists() and datasaves.exists():
+    exit
+elif not(saves.exists()): 
+    print("WARNING🚨🚨\nPLAYER DATA STORAGE UNIT NON EXISTANT!\n Atemting Automatic Repair.....\n")
+    loading_bar(50, 0.05)
+    Path("Saves").mkdir(parents=True, exist_ok=True) 
+elif not(datasaves.exists()):
+    print("WARNING🚨🚨\n ITEM STORAGE NON EXISTANT!\n Atemting Automatic Repair.....\n")
+    loading_bar(50, 0.05)
+    Path("DataSaves").mkdir(parents=True, exist_ok=True)
 
 def ChangePlrName(name):
     filepath = Path(__file__).parent / "Saves" / "player.json"
