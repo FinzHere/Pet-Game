@@ -4,12 +4,12 @@
     },
     "Stats": {
         "TotalPets": 0,
-        "TotalLevels": 0,
-        "TotalXP": 0,
-        "TotalFeeds": 0,
-        "TotalPlays": 0,
+        "TotalLevels": 1,
+        "TotalXP": 14,
+        "TotalFeeds": 12,
+        "TotalPlays": 2,
         "TotalGambles": 0,
-        "TotalErrors": 0,
+        "TotalErrors": 1,
         "TotalUnborns": 0
     }
 }

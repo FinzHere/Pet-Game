@@ -5,8 +5,8 @@ import json
 import os
 import time
 
-thingsToEat = ["Bread", "Ice Cream", "Cookies", "Pet Food", "An Apple", "A Nuclear Warhead", "A Pretzel", "Grapes", "An Undiscovered Animal", "An Unkown Bacterium"]
-thingsToPlay = ["Fetch", "Hide and Seek", "Tug-of-war with a rope", "Tug-of-war with posidens trident", "Chess", "Checkers", "Snakes and Ladders", "Rummikub", "Blackjack", "Roulette", "Baccarat", "Rummy", "Go Fish", "Poker", "with a Meteorite that fell from Space", "with a Little Alien"]
+thingsToEat = ["Bread", "Ice Cream", "Cookies", "Pet Food", "An Apple", "A Nuclear Warhead", "A Pretzel", "Grapes", "An Undiscovered Animal", "An Unkown Bacterium", "Chocolate"]
+thingsToPlay = ["Fetch", "Hide and Seek", "Tug-of-war with a rope", "Tug-of-war with posidens trident", "Chess", "Checkers", "Snakes and Ladders", "Rummikub", "Blackjack", "Roulette", "Baccarat", "Rummy", "Go Fish", "Poker", "with a Meteorite that fell from Space", "with a Little Alien", "Round the clock", "Russian Roulette"]
 
 age = 1
 nextAgeCounter = 0
@@ -50,11 +50,11 @@ datasaves = Path(__file__).parent / "DataSaves"
 if saves.exists() and datasaves.exists():
     exit
 elif not(saves.exists()): 
-    print("WARNING🚨🚨\nPLAYER DATA STORAGE UNIT NON EXISTANT!\n Atemting Automatic Repair.....\n")
+    print("WARNING🚨🚨\nPLAYER DATA STORAGE (ALL PLAYER DATA LOST) UNIT NON EXISTANT!\n Atemting Automatic Repair.....\n")
     loading_bar(50, 0.05)
     Path("Saves").mkdir(parents=True, exist_ok=True) 
 elif not(datasaves.exists()):
-    print("WARNING🚨🚨\n ITEM STORAGE NON EXISTANT!\n Atemting Automatic Repair.....\n")
+    print("WARNING🚨🚨\n ITEM STORAGE (ALL PET SAVE FILES LOST) NON EXISTANT!\n Atemting Automatic Repair.....\n")
     loading_bar(50, 0.05)
     Path("DataSaves").mkdir(parents=True, exist_ok=True)
 
@@ -312,6 +312,7 @@ while True:
             print("\n--- PLAYER STATISTICS ---")
             descriptive_names = {
                 "TotalPets": "Total Number of Pets Created",
+                "TotalLevels": "Total Levels Earned",
                 "TotalXP": "Total XP Earned",
                 "TotalFeeds": "Total Number of Feeds",
                 "TotalPlays": "Total Number of Plays",
