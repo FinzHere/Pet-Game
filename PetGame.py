@@ -47,16 +47,17 @@ def loading_bar(total_steps, delay=0.1):
 saves = Path(__file__).parent / "Saves"
 datasaves = Path(__file__).parent / "DataSaves"
 
-if saves.exists() and datasaves.exists():
-    exit
-elif not(saves.exists()): 
-    print("WARNING🚨🚨\nPLAYER DATA STORAGE (ALL PLAYER DATA LOST) UNIT NON EXISTANT!\n Atemting Automatic Repair.....\n")
-    loading_bar(50, 0.05)
-    Path("Saves").mkdir(parents=True, exist_ok=True) 
-elif not(datasaves.exists()):
-    print("WARNING🚨🚨\n ITEM STORAGE (ALL PET SAVE FILES LOST) NON EXISTANT!\n Atemting Automatic Repair.....\n")
-    loading_bar(50, 0.05)
-    Path("DataSaves").mkdir(parents=True, exist_ok=True)
+while True:
+    if saves.exists() and datasaves.exists():
+        break
+    elif not(saves.exists()): 
+        print("WARNING🚨🚨\nPlayer Save Folder Not Found!\n Atemting Automatic Repair.....\n")
+        loading_bar(50, 0.05)
+        Path("Saves").mkdir(parents=True, exist_ok=True) 
+    elif not(datasaves.exists()):
+        print("WARNING🚨🚨\nPet Save Folder Not Found!\n Atemting Automatic Repair.....\n")
+        loading_bar(50, 0.05)
+        Path("DataSaves").mkdir(parents=True, exist_ok=True)
 
 def ChangePlrName(name):
     filepath = Path(__file__).parent / "Saves" / "player.json"
