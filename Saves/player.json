@@ -1,15 +1,15 @@
 {
     "Player": {
-        "nickname": "Finley"
+        "nickname": ""
     },
     "Stats": {
         "TotalPets": 0,
-        "TotalLevels": 1,
-        "TotalXP": 14,
-        "TotalFeeds": 12,
-        "TotalPlays": 2,
+        "TotalLevels": 0,
+        "TotalXP": 0,
+        "TotalFeeds": 0,
+        "TotalPlays": 0,
         "TotalGambles": 0,
-        "TotalErrors": 1,
+        "TotalErrors": 0,
         "TotalUnborns": 0
     }
 }

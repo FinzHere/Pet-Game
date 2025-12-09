@@ -59,6 +59,12 @@ while True:
         loading_bar(50, 0.05)
         Path("DataSaves").mkdir(parents=True, exist_ok=True)
 
+def save():
+    print()
+    filename = f"DataSaves/{pet.petName}Save.json"
+    with open(filename, "w") as f:
+        json.dump(pet.__dict__, f, indent=4) 
+
 def ChangePlrName(name):
     filepath = Path(__file__).parent / "Saves" / "player.json"
     with open(filepath, "r") as f:
@@ -351,14 +357,14 @@ while True:
         #Calling Of PlayFunc
         elif selector == 2:
             pet.Play()
+            save()
         #Calling of FeedFunc
         elif selector == 3:
             pet.Feed()
+            save()
         #Saves and exits
         elif selector == 4:
-            filename = f"DataSaves/{pet.petName}Save.json"
-            with open(filename, "w") as f:
-                json.dump(pet.__dict__, f, indent=4)
+            save()
             print("You saved your game!\nGoodbye!")
             sys.exit()
         #Gambling...?
@@ -367,6 +373,7 @@ while True:
             gambleConfirm = str(input(f"{pet.petName}\'s levels(age) is on the line!\ny/N?").strip().lower())
             if gambleConfirm in ["y", "yes"]:
                 pet.gambling()
+                save()
                 
     #Error protection
     except ValueError:
