@@ -60,7 +60,6 @@ while True:
         Path("DataSaves").mkdir(parents=True, exist_ok=True)
 
 def save():
-    print()
     filename = f"DataSaves/{pet.petName}Save.json"
     with open(filename, "w") as f:
         json.dump(pet.__dict__, f, indent=4) 
