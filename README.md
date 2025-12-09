@@ -3,3 +3,5 @@ Hi! This is a fun little project me and my mate James worked on. It's a tamogotc
 This Code Is OpenSource
 Things This Code Does:
 Auto Recreation of missing files
+
+Hi! This is a fun little project me and my mate Spud worked on. It's a tamogotchi-esque game, where you create a pet, feed it, play with it and use the secret gambling feature! This isn't a serious project, it's just a little fun and in no way serious or professional. Enjoy!
